@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Crown Regency Residences Davao - Material Request</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <div class="page-container">
+
+    <!-- HEADER -->
+
+    <header class="header-box">
+
+      <img src="https://i.postimg.cc/T3qvpYDb/images-1.png" alt="Header Logo" class="header-image" />
+
+    </header>
+
+    <!-- AUTH SECTION -->
+
+    <div id="auth-section" class="card-container">
+
+      <!-- LOGIN -->
+
+      <div id="login-section" class="auth-box">
+
+        <h3>Login</h3>
+
+        <input type="email" id="loginEmail" placeholder="Email" />
+
+        <input type="password" id="loginPassword" placeholder="Password" />
+
+        <button id="loginBtn">Login</button>
+
+        <p>No account? <a href="#" id="showRegister">Register</a></p>
+
+        <p><a href="#" id="showForgot">Forgot Password?</a></p>
+
+      </div>
+
+      <!-- REGISTER -->
+
+      <div id="register-section" class="auth-box hidden">
+
+        <h3>Register</h3>
+
+        <input type="text" id="registerName" placeholder="Full Name" />
+
+        <input type="email" id="registerEmail" placeholder="Email" />
+
+        <input type="password" id="registerPassword" placeholder="Password" />
+
+        <label>Role</label>
+
+        <select id="registerRole">
+
+          <option value="">Select Role</option>
+
+          <option value="User">Maintenance/User</option>
+
+          <option value="GM">GM</option>
+
+        </select>
+
+        <input type="text" id="gmCode" placeholder="Approval Code (GM only)" class="hidden" />
+
+        <button id="registerBtn">Register</button>
+
+        <p><a href="#" id="showLogin">Back to Login</a></p>
+
+      </div>
+
+      <!-- FORGOT PASSWORD -->
+
+      <div id="forgot-section" class="auth-box hidden">
+
+        <h3>Forgot Password</h3>
+
+        <input type="email" id="forgotEmail" placeholder="Enter your email" />
+
+        <button id="forgotBtn">Send Reset Link</button>
+
+        <p><a href="#" id="backToLogin">Back to Login</a></p>
+
+      </div>
+
+    </div>
+
+    <!-- APP SECTION -->
+
+    <div id="app-section" class="hidden app-wrapper">
+
+      <div class="top-bar">
+
+        <span id="userNameDisplay"></span>
+
+        <button id="logoutBtn">Logout</button>
+
+      </div>
+
+      <!-- USER REQUEST -->
+
+      <div id="userRequestSection" class="card">
+
+        <h3>Submit Material Request</h3>
+
+        <div class="form-container">
+
+          <div class="form-left">
+
+            <label>Date</label>
+
+            <input type="text" id="requestDate" readonly />
+
+            <label>Particular</label>
+
+            <input type="text" id="requestParticular" placeholder="Item Description" />
+
+            <label>Unit</label>
+
+            <input type="text" id="requestUnit" placeholder="Pcs, Set, Tube etc" />
+
+            <label>Qty</label>
+
+            <input type="number" id="requestQty" placeholder="Quantity" />
+
+            <label>Upload Image</label>
+
+            <input type="file" id="requestImage" accept="image/*" />
+
+          </div>
+
+          <div class="form-right">
+
+            <button id="submitRequestBtn">Submit Request</button>
+
+            <div class="progress-bar hidden" id="progressBar"><div></div></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- GM ONLY -->
+
+      <div id="gmBackground" class="card hidden">
+
+        <h3>Change Background (GM Only)</h3>
+
+        <input type="file" id="bgUpload" accept="image/*" />
+
+      </div>
+
+      <div id="gmFilters" class="card hidden">
+
+        <h3>Filter Requests (GM)</h3>
+
+        <div class="filter-container">
+
+          <label>From</label><input type="date" id="filterFromDate" />
+
+          <label>To</label><input type="date" id="filterToDate" />
+
+          <label>Status</label>
+
+          <select id="filterStatus">
+
+            <option value="All">All</option>
+
+            <option value="Pending">Pending</option>
+
+            <option value="Approved">Approved</option>
+
+            <option value="Disapproved">Disapproved</option>
+
+          </select>
+
+          <button id="applyFilterBtn">Apply Filter</button>
+
+          <button id="clearFilterBtn">Clear Filter</button>
+
+        </div>
+
+      </div>
+
+      <h3>All Requests</h3>
+
+      <div id="requestsList" class="card"></div>
+
+    </div>
+
+  </div>
+
+  <!-- IMAGE MODAL -->
+
+  <div id="imageModal" class="image-modal hidden">
+
+    <span id="closeModal">&times;</span>
+
+    <img id="modalImg" />
+
+  </div>
+
+  <!-- EDIT MODAL -->
+
+  <div id="editModal" class="image-modal hidden">
+
+    <div class="edit-card">
+
+      <h3>Edit Request</h3>
+
+      <label>Particular</label>
+
+      <input type="text" id="editParticular" />
+
+      <label>Unit</label>
+
+      <input type="text" id="editUnit" />
+
+      <label>Qty</label>
+
+      <input type="number" id="editQty" />
+
+      <button id="saveEditBtn">Save Changes</button>
+
+      <button id="cancelEditBtn">Cancel</button>
+
+    </div>
+
+  </div>
+
+  <div id="toast-container"></div>
+
+  <button id="scrollUpBtn" title="Go to top">⬆</button>
+
+  <script type="module" src="app.js"></script>
+
+</body>
+
+</html>
+    <script type="module" src="./script.js"></script>
+
+  </body>
+  
+</html>
